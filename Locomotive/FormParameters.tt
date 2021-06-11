@@ -1,0 +1,39 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+
+<label class="mr-sm-2"> С </label>
+<input type="text" class="form-control mr-sm-2 ih-date" param_name="dtstart"/>
+<label class="mr-sm-2"> по </label>
+<input type="text" class="form-control mr-sm-2 ih-date" param_name="dtend"/>
+<script>
+
+
+
+function param_init(){
+ $(".ih-date").each(function(){
+  try{
+                $(this).daterangepicker({
+                                "showDropdowns": true,
+                                "startDate": moment().startOf('month'),
+                                "endDate": moment().endOf('month'),
+                                "singleDatePicker": true
+                            });
+   }catch(e0){
+
+   }
+ });
+}
+
+function param_destroy(){
+        $(".ih-date").each(function(){
+            try{
+                $(this).data('daterangepicker').remove();
+            }catch(e0){
+
+            }
+        });
+}
+</script>

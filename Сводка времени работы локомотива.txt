@@ -1,0 +1,130 @@
+DocTimeLoco:
+
+   public void UpdateHTML(Document doc, Map<String, java.util.Date> args, Session session) {
+      
+      List<StringRow> data= getData(args, session);
+      Element table = util.getHTMLLayoutTableByIndex(doc, 1);
+      Element emptyRow = util.getHTMLTableRow(table, 3);
+     
+      int num=0;
+      for(StringRow row: data){
+          if( num > 0) table.append(emptyRow.toString());
+          
+          util.getHTMLTableBlock(table, 3+num, 0).text(row.npp);
+          util.getHTMLTableBlock(table, 3+num, 1).text(row.date);
+          util.getHTMLTableBlock(table, 3+num, 2).text(row.locomotivNumber);
+          util.getHTMLTableBlock(table, 3+num, 3).text(row.teamNumber);
+          util.getHTMLTableBlock(table, 3+num, 4).text(row.dispatcherName);
+          util.getHTMLTableBlock(table, 3+num, 5).text(row.timeIn);
+          util.getHTMLTableBlock(table, 3+num, 6).text(row.timeOut);
+          util.getHTMLTableBlock(table, 3+num, 7).text(row.actualWorkTime);
+          util.getHTMLTableBlock(table, 3+num, 8).text(row.consistentTeam);
+          util.getHTMLTableBlock(table, 3+num, 9).text(row.comment);
+          util.getHTMLTableBlock(table, 3+num, 10).text(row.workAfter20);
+         
+         num++; 
+     } 
+   }
+
+
+   /////////////////////////////////////////////////////////////////////
+   // получение данных для заполнения таблицы
+   ////////////////////////////////////////////////////////////////////
+   private List<StringRow> getData(Map<String, java.util.Date> args, Session session) {
+       List<StringRow> rows = new ArrayList<>();
+       SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+       SimpleDateFormat sdfYear = new SimpleDateFormat("yyyy");
+       String dtStart = sdf.format(args.get("dtstart"));
+       String dtEnd = sdf.format(args.get("dtend"));
+       int dtStartInt = Integer.parseInt(sdfYear.format(args.get("dtstart")));
+       int dtEndInt = Integer.parseInt(sdfYear.format(args.get("dtend")));
+
+       StringBuilder yearIn = new StringBuilder( Integer.toString(dtStartInt) );
+       for ( dtStartInt += 1; dtStartInt <= dtEndInt; dtStartInt++)
+    	   			yearIn.append("," + Integer.toString(dtStartInt) );
+       
+       StringBuilder sb = new StringBuilder("SELECT ")
+    		   .append("date_start,date_end,teplovoz_num,call_sign,brigade,fio_dispetcher,time_work,")
+    		   .append("lokomotiv_sost_brigade,comment ")
+    		   .append("FROM tb_railway_lokomotiv WHERE year IN ("+ yearIn + ") ")
+                   .append("AND date_start >=:dtStart AND date_start <=:dtEnd");
+
+        com.datastax.driver.core.PreparedStatement pstmt =session.prepare(sb.toString());
+        BoundStatement  bpst=pstmt.bind();        
+        bpst.setTimestamp("dtStart", args.get("dtstart"));
+        bpst.setTimestamp("dtEnd", args.get("dtend"));      
+        ResultSet resultSet = session.execute(bpst.setConsistencyLevel(ConsistencyLevel.LOCAL_QUORUM));
+       
+       List<Row> all = resultSet.all();
+       
+       all.sort((t, t1) -> { 
+           return (int)(t.getTimestamp(0).getTime() - t1.getTimestamp(0).getTime());
+       });
+       
+       int size = all.size();
+       
+       SimpleDateFormat sdfTableDate = new SimpleDateFormat("dd.MM.yyyy");
+       SimpleDateFormat sdfTableTime = new SimpleDateFormat("HH:mm");
+
+     
+       TypeToken<Map<String,String>> tokеn = new TypeToken<Map<String,String>>(){};
+       
+       for(int i=0; i < size; i++){
+    	   StringRow row = new StringRow();
+    	   Row currentRow = all.get(i);
+   	   
+    	   row.npp = String.format("%d",i+1);
+           row.date = currentRow.isNull(0) ? "" : sdfTableDate.format(currentRow.getTimestamp(0));
+    	   row.locomotivNumber = String.format("%d(%d)", currentRow.getInt(2), currentRow.getInt(3) );
+    	   row.teamNumber = String.format("%d", currentRow.getInt(4) );     
+    	   row.dispatcherName = currentRow.getString(5);    
+    	   row.timeIn = currentRow.isNull(0) ? "" : sdfTableTime.format(currentRow.getTimestamp(0));     
+    	   row.timeOut =  currentRow.isNull(1) ? "" : sdfTableTime.format(currentRow.getTimestamp(1));
+    	   row.actualWorkTime = String.format("%02d:%02d", currentRow.getInt(6)/60, currentRow.getInt(6)%60 );     
+    	   row.consistentTeam = "";   
+    	      
+    	   Set <Map<String,String>> rs0 = currentRow.getSet(7,  tokеn);
+    	   for(Map<String,String> m : rs0) row.consistentTeam+=m.get("brigade_pos") + " - " + m.get("brigade_fio") + "; ";
+    	   if ( !row.consistentTeam.isEmpty() ) 
+    		   row.consistentTeam = row.consistentTeam.substring(0, row.consistentTeam.length()-1); // remove last space
+
+    	   row.comment = currentRow.getString(8);
+    	   
+           if (!currentRow.isNull(1)) {
+                Date dateEnd = currentRow.getTimestamp(1);
+    	   
+    	   GregorianCalendar calendar = new GregorianCalendar();
+    	   calendar.setTimeInMillis(dateEnd.getTime());
+           
+    	   calendar.set(Calendar.HOUR_OF_DAY, 20);
+    	   calendar.set(Calendar.MINUTE, 0);
+    	   calendar.set(Calendar.SECOND, 0);
+    	   calendar.set(Calendar.MILLISECOND, 0);
+           row.workAfter20 = dateEnd.getTime() > calendar.getTimeInMillis() ? "до " + row.timeOut : "";
+                
+           } else row.workAfter20 = "";
+
+           rows.add(row);
+           
+          }
+   
+
+       return rows;       
+   }  
+
+ /////////////////////////////////////////////////////////////////////////
+ // Структура данных записей таблицы
+ ////////////////////////////////////////////////////////////////////////  
+  public static class StringRow {
+	  public String npp;
+	  public String date;
+	  public String locomotivNumber;
+	  public String teamNumber;     
+      public String dispatcherName;    
+      public String timeIn;     
+      public String timeOut;     
+      public String actualWorkTime;     
+      public String consistentTeam;     
+      public String comment;    
+      public String workAfter20;     
+}

@@ -1,0 +1,2258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report MustUnderstand="df" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily">
+  <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <ConnectionProperties>
+        <DataProvider>ENTERDATA</DataProvider>
+        <ConnectString />
+        <IntegratedSecurity>true</IntegratedSecurity>
+      </ConnectionProperties>
+      <rd:SecurityType>Integrated</rd:SecurityType>
+      <rd:DataSourceID>5ede0028-8839-4e34-aeaa-ea5c10dee79e</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="main_info">
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandText>&lt;Query&gt;
+  &lt;XmlData&gt;
+    &lt;Data&gt;
+      &lt;Row&gt;
+        &lt;dtstart&gt;05.08.2020&lt;/dtstart&gt;
+        &lt;dtend&gt;15.08.2020&lt;/dtend&gt;
+      &lt;/Row&gt;
+    &lt;/Data&gt;
+  &lt;/XmlData&gt;
+  &lt;ElementPath&gt;Data{}/Row{dtstart(String),dtend(String)}&lt;/ElementPath&gt;
+&lt;/Query&gt;</CommandText>
+        <rd:DesignerState>
+          <DataGrid xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="">
+            <RowNumber>1</RowNumber>
+            <ColumnNumber>2</ColumnNumber>
+            <ColumnName ColumnIndex="0" ColumnWidth="100" DataType="String">dtstart</ColumnName>
+            <ColumnName ColumnIndex="1" ColumnWidth="100" DataType="String">dtend</ColumnName>
+            <Data ColumnIndex="0" RowIndex="0">05.08.2020</Data>
+            <Data ColumnIndex="1" RowIndex="0">15.08.2020</Data>
+          </DataGrid>
+        </rd:DesignerState>
+      </Query>
+      <Fields>
+        <Field Name="dtstart">
+          <DataField>dtstart</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="dtend">
+          <DataField>dtend</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="lokomotiv_list">
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandText>&lt;Query&gt;
+  &lt;XmlData&gt;
+    &lt;Data&gt;
+      &lt;Row&gt;
+        &lt;num&gt;1&lt;/num&gt;
+        &lt;date_start&gt;2018-09-01T00:00:00&lt;/date_start&gt;
+        &lt;teplovoz_num&gt;234&lt;/teplovoz_num&gt;
+        &lt;call_sign&gt;34&lt;/call_sign&gt;
+        &lt;brigade&gt;4&lt;/brigade&gt;
+        &lt;fio_dispetcher&gt;Иванова А.Я.&lt;/fio_dispetcher&gt;
+        &lt;time_start&gt;08:00&lt;/time_start&gt;
+        &lt;date_end&gt;15:20&lt;/date_end&gt;
+        &lt;work_time&gt;06:20&lt;/work_time&gt;
+        &lt;lokomotiv_sost_brigade&gt;Машинист тепловоза - Акулов Б.У; Составитель - Рыбкин А.Я.&lt;/lokomotiv_sost_brigade&gt;
+        &lt;comment&gt;&lt;/comment&gt;
+        &lt;work_time_extension&gt;&lt;/work_time_extension&gt;
+        &lt;is_weekend&gt;1&lt;/is_weekend&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;num&gt;2&lt;/num&gt;
+        &lt;date_start&gt;2018-09-02T00:00:00&lt;/date_start&gt;
+        &lt;teplovoz_num&gt;234&lt;/teplovoz_num&gt;
+        &lt;call_sign&gt;34&lt;/call_sign&gt;
+        &lt;brigade&gt;1&lt;/brigade&gt;
+        &lt;fio_dispetcher&gt;Иванова А.Я.&lt;/fio_dispetcher&gt;
+        &lt;time_start&gt;09:00&lt;/time_start&gt;
+        &lt;date_end&gt;15:20&lt;/date_end&gt;
+        &lt;work_time&gt;06:20&lt;/work_time&gt;
+        &lt;lokomotiv_sost_brigade&gt;Машинист тепловоза - Акулов Б.У; Составитель - Рыбкин А.Я.&lt;/lokomotiv_sost_brigade&gt;
+        &lt;comment&gt;&lt;/comment&gt;
+        &lt;work_time_extension&gt;&lt;/work_time_extension&gt;
+        &lt;is_weekend&gt;1&lt;/is_weekend&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;num&gt;3&lt;/num&gt;
+        &lt;date_start&gt;2018-09-03T00:00:00&lt;/date_start&gt;
+        &lt;teplovoz_num&gt;234&lt;/teplovoz_num&gt;
+        &lt;call_sign&gt;34&lt;/call_sign&gt;
+        &lt;brigade&gt;2&lt;/brigade&gt;
+        &lt;fio_dispetcher&gt;Иванова А.Я.&lt;/fio_dispetcher&gt;
+        &lt;time_start&gt;09:00&lt;/time_start&gt;
+        &lt;date_end&gt;15:20&lt;/date_end&gt;
+        &lt;work_time&gt;06:20&lt;/work_time&gt;
+        &lt;lokomotiv_sost_brigade&gt;Машинист тепловоза - Акулов Б.У; Составитель - Рыбкин А.Я.&lt;/lokomotiv_sost_brigade&gt;
+        &lt;comment&gt;Ожидание вагонов&lt;/comment&gt;
+        &lt;work_time_extension&gt;до 23:00&lt;/work_time_extension&gt;
+        &lt;is_weekend&gt;0&lt;/is_weekend&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;num&gt;4&lt;/num&gt;
+        &lt;date_start&gt;&lt;/date_start&gt;
+        &lt;teplovoz_num&gt;&lt;/teplovoz_num&gt;
+        &lt;call_sign&gt;&lt;/call_sign&gt;
+        &lt;brigade&gt;&lt;/brigade&gt;
+        &lt;fio_dispetcher&gt;&lt;/fio_dispetcher&gt;
+        &lt;time_start&gt;&lt;/time_start&gt;
+        &lt;date_end&gt;&lt;/date_end&gt;
+        &lt;work_time&gt;&lt;/work_time&gt;
+        &lt;lokomotiv_sost_brigade&gt;&lt;/lokomotiv_sost_brigade&gt;
+        &lt;comment&gt;&lt;/comment&gt;
+        &lt;work_time_extension&gt;&lt;/work_time_extension&gt;
+        &lt;is_weekend&gt;&lt;/is_weekend&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;num&gt;5&lt;/num&gt;
+        &lt;date_start&gt;&lt;/date_start&gt;
+        &lt;teplovoz_num&gt;&lt;/teplovoz_num&gt;
+        &lt;call_sign&gt;&lt;/call_sign&gt;
+        &lt;brigade&gt;&lt;/brigade&gt;
+        &lt;fio_dispetcher&gt;&lt;/fio_dispetcher&gt;
+        &lt;time_start&gt;&lt;/time_start&gt;
+        &lt;date_end&gt;&lt;/date_end&gt;
+        &lt;work_time&gt;&lt;/work_time&gt;
+        &lt;lokomotiv_sost_brigade&gt;&lt;/lokomotiv_sost_brigade&gt;
+        &lt;comment&gt;&lt;/comment&gt;
+        &lt;work_time_extension&gt;&lt;/work_time_extension&gt;
+        &lt;is_weekend&gt;&lt;/is_weekend&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;num&gt;6&lt;/num&gt;
+        &lt;date_start&gt;&lt;/date_start&gt;
+        &lt;teplovoz_num&gt;&lt;/teplovoz_num&gt;
+        &lt;call_sign&gt;&lt;/call_sign&gt;
+        &lt;brigade&gt;&lt;/brigade&gt;
+        &lt;fio_dispetcher&gt;&lt;/fio_dispetcher&gt;
+        &lt;time_start&gt;&lt;/time_start&gt;
+        &lt;date_end&gt;&lt;/date_end&gt;
+        &lt;work_time&gt;&lt;/work_time&gt;
+        &lt;lokomotiv_sost_brigade&gt;&lt;/lokomotiv_sost_brigade&gt;
+        &lt;comment&gt;&lt;/comment&gt;
+        &lt;work_time_extension&gt;&lt;/work_time_extension&gt;
+        &lt;is_weekend&gt;&lt;/is_weekend&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;num&gt;7&lt;/num&gt;
+        &lt;date_start&gt;&lt;/date_start&gt;
+        &lt;teplovoz_num&gt;&lt;/teplovoz_num&gt;
+        &lt;call_sign&gt;&lt;/call_sign&gt;
+        &lt;brigade&gt;&lt;/brigade&gt;
+        &lt;fio_dispetcher&gt;&lt;/fio_dispetcher&gt;
+        &lt;time_start&gt;&lt;/time_start&gt;
+        &lt;date_end&gt;&lt;/date_end&gt;
+        &lt;work_time&gt;&lt;/work_time&gt;
+        &lt;lokomotiv_sost_brigade&gt;&lt;/lokomotiv_sost_brigade&gt;
+        &lt;comment&gt;&lt;/comment&gt;
+        &lt;work_time_extension&gt;&lt;/work_time_extension&gt;
+        &lt;is_weekend&gt;&lt;/is_weekend&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;num&gt;8&lt;/num&gt;
+        &lt;date_start&gt;&lt;/date_start&gt;
+        &lt;teplovoz_num&gt;&lt;/teplovoz_num&gt;
+        &lt;call_sign&gt;&lt;/call_sign&gt;
+        &lt;brigade&gt;&lt;/brigade&gt;
+        &lt;fio_dispetcher&gt;&lt;/fio_dispetcher&gt;
+        &lt;time_start&gt;&lt;/time_start&gt;
+        &lt;date_end&gt;&lt;/date_end&gt;
+        &lt;work_time&gt;&lt;/work_time&gt;
+        &lt;lokomotiv_sost_brigade&gt;&lt;/lokomotiv_sost_brigade&gt;
+        &lt;comment&gt;&lt;/comment&gt;
+        &lt;work_time_extension&gt;&lt;/work_time_extension&gt;
+        &lt;is_weekend&gt;&lt;/is_weekend&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;num&gt;9&lt;/num&gt;
+        &lt;date_start&gt;&lt;/date_start&gt;
+        &lt;teplovoz_num&gt;&lt;/teplovoz_num&gt;
+        &lt;call_sign&gt;&lt;/call_sign&gt;
+        &lt;brigade&gt;&lt;/brigade&gt;
+        &lt;fio_dispetcher&gt;&lt;/fio_dispetcher&gt;
+        &lt;time_start&gt;&lt;/time_start&gt;
+        &lt;date_end&gt;&lt;/date_end&gt;
+        &lt;work_time&gt;&lt;/work_time&gt;
+        &lt;lokomotiv_sost_brigade&gt;&lt;/lokomotiv_sost_brigade&gt;
+        &lt;comment&gt;&lt;/comment&gt;
+        &lt;work_time_extension&gt;&lt;/work_time_extension&gt;
+        &lt;is_weekend&gt;&lt;/is_weekend&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;num&gt;10&lt;/num&gt;
+        &lt;date_start&gt;&lt;/date_start&gt;
+        &lt;teplovoz_num&gt;&lt;/teplovoz_num&gt;
+        &lt;call_sign&gt;&lt;/call_sign&gt;
+        &lt;brigade&gt;&lt;/brigade&gt;
+        &lt;fio_dispetcher&gt;&lt;/fio_dispetcher&gt;
+        &lt;time_start&gt;&lt;/time_start&gt;
+        &lt;date_end&gt;&lt;/date_end&gt;
+        &lt;work_time&gt;&lt;/work_time&gt;
+        &lt;lokomotiv_sost_brigade&gt;&lt;/lokomotiv_sost_brigade&gt;
+        &lt;comment&gt;&lt;/comment&gt;
+        &lt;work_time_extension&gt;&lt;/work_time_extension&gt;
+        &lt;is_weekend&gt;&lt;/is_weekend&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;num&gt;11&lt;/num&gt;
+        &lt;date_start&gt;&lt;/date_start&gt;
+        &lt;teplovoz_num&gt;&lt;/teplovoz_num&gt;
+        &lt;call_sign&gt;&lt;/call_sign&gt;
+        &lt;brigade&gt;&lt;/brigade&gt;
+        &lt;fio_dispetcher&gt;&lt;/fio_dispetcher&gt;
+        &lt;time_start&gt;&lt;/time_start&gt;
+        &lt;date_end&gt;&lt;/date_end&gt;
+        &lt;work_time&gt;&lt;/work_time&gt;
+        &lt;lokomotiv_sost_brigade&gt;&lt;/lokomotiv_sost_brigade&gt;
+        &lt;comment&gt;&lt;/comment&gt;
+        &lt;work_time_extension&gt;&lt;/work_time_extension&gt;
+        &lt;is_weekend&gt;&lt;/is_weekend&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;num&gt;12&lt;/num&gt;
+        &lt;date_start&gt;&lt;/date_start&gt;
+        &lt;teplovoz_num&gt;&lt;/teplovoz_num&gt;
+        &lt;call_sign&gt;&lt;/call_sign&gt;
+        &lt;brigade&gt;&lt;/brigade&gt;
+        &lt;fio_dispetcher&gt;&lt;/fio_dispetcher&gt;
+        &lt;time_start&gt;&lt;/time_start&gt;
+        &lt;date_end&gt;&lt;/date_end&gt;
+        &lt;work_time&gt;&lt;/work_time&gt;
+        &lt;lokomotiv_sost_brigade&gt;&lt;/lokomotiv_sost_brigade&gt;
+        &lt;comment&gt;&lt;/comment&gt;
+        &lt;work_time_extension&gt;&lt;/work_time_extension&gt;
+        &lt;is_weekend&gt;&lt;/is_weekend&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;num&gt;14&lt;/num&gt;
+        &lt;date_start&gt;&lt;/date_start&gt;
+        &lt;teplovoz_num&gt;&lt;/teplovoz_num&gt;
+        &lt;call_sign&gt;&lt;/call_sign&gt;
+        &lt;brigade&gt;&lt;/brigade&gt;
+        &lt;fio_dispetcher&gt;&lt;/fio_dispetcher&gt;
+        &lt;time_start&gt;&lt;/time_start&gt;
+        &lt;date_end&gt;&lt;/date_end&gt;
+        &lt;work_time&gt;&lt;/work_time&gt;
+        &lt;lokomotiv_sost_brigade&gt;&lt;/lokomotiv_sost_brigade&gt;
+        &lt;comment&gt;&lt;/comment&gt;
+        &lt;work_time_extension&gt;&lt;/work_time_extension&gt;
+        &lt;is_weekend&gt;&lt;/is_weekend&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;num&gt;15&lt;/num&gt;
+        &lt;date_start&gt;&lt;/date_start&gt;
+        &lt;teplovoz_num&gt;&lt;/teplovoz_num&gt;
+        &lt;call_sign&gt;&lt;/call_sign&gt;
+        &lt;brigade&gt;&lt;/brigade&gt;
+        &lt;fio_dispetcher&gt;&lt;/fio_dispetcher&gt;
+        &lt;time_start&gt;&lt;/time_start&gt;
+        &lt;date_end&gt;&lt;/date_end&gt;
+        &lt;work_time&gt;&lt;/work_time&gt;
+        &lt;lokomotiv_sost_brigade&gt;&lt;/lokomotiv_sost_brigade&gt;
+        &lt;comment&gt;&lt;/comment&gt;
+        &lt;work_time_extension&gt;&lt;/work_time_extension&gt;
+        &lt;is_weekend&gt;&lt;/is_weekend&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;num&gt;16&lt;/num&gt;
+        &lt;date_start&gt;&lt;/date_start&gt;
+        &lt;teplovoz_num&gt;&lt;/teplovoz_num&gt;
+        &lt;call_sign&gt;&lt;/call_sign&gt;
+        &lt;brigade&gt;&lt;/brigade&gt;
+        &lt;fio_dispetcher&gt;&lt;/fio_dispetcher&gt;
+        &lt;time_start&gt;&lt;/time_start&gt;
+        &lt;date_end&gt;&lt;/date_end&gt;
+        &lt;work_time&gt;&lt;/work_time&gt;
+        &lt;lokomotiv_sost_brigade&gt;&lt;/lokomotiv_sost_brigade&gt;
+        &lt;comment&gt;&lt;/comment&gt;
+        &lt;work_time_extension&gt;&lt;/work_time_extension&gt;
+        &lt;is_weekend&gt;&lt;/is_weekend&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;num&gt;17&lt;/num&gt;
+        &lt;date_start&gt;&lt;/date_start&gt;
+        &lt;teplovoz_num&gt;&lt;/teplovoz_num&gt;
+        &lt;call_sign&gt;&lt;/call_sign&gt;
+        &lt;brigade&gt;&lt;/brigade&gt;
+        &lt;fio_dispetcher&gt;&lt;/fio_dispetcher&gt;
+        &lt;time_start&gt;&lt;/time_start&gt;
+        &lt;date_end&gt;&lt;/date_end&gt;
+        &lt;work_time&gt;&lt;/work_time&gt;
+        &lt;lokomotiv_sost_brigade&gt;&lt;/lokomotiv_sost_brigade&gt;
+        &lt;comment&gt;&lt;/comment&gt;
+        &lt;work_time_extension&gt;&lt;/work_time_extension&gt;
+        &lt;is_weekend&gt;&lt;/is_weekend&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;num&gt;18&lt;/num&gt;
+        &lt;date_start&gt;&lt;/date_start&gt;
+        &lt;teplovoz_num&gt;&lt;/teplovoz_num&gt;
+        &lt;call_sign&gt;&lt;/call_sign&gt;
+        &lt;brigade&gt;&lt;/brigade&gt;
+        &lt;fio_dispetcher&gt;&lt;/fio_dispetcher&gt;
+        &lt;time_start&gt;&lt;/time_start&gt;
+        &lt;date_end&gt;&lt;/date_end&gt;
+        &lt;work_time&gt;&lt;/work_time&gt;
+        &lt;lokomotiv_sost_brigade&gt;&lt;/lokomotiv_sost_brigade&gt;
+        &lt;comment&gt;&lt;/comment&gt;
+        &lt;work_time_extension&gt;&lt;/work_time_extension&gt;
+        &lt;is_weekend&gt;&lt;/is_weekend&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;num&gt;19&lt;/num&gt;
+        &lt;date_start&gt;&lt;/date_start&gt;
+        &lt;teplovoz_num&gt;&lt;/teplovoz_num&gt;
+        &lt;call_sign&gt;&lt;/call_sign&gt;
+        &lt;brigade&gt;&lt;/brigade&gt;
+        &lt;fio_dispetcher&gt;&lt;/fio_dispetcher&gt;
+        &lt;time_start&gt;&lt;/time_start&gt;
+        &lt;date_end&gt;&lt;/date_end&gt;
+        &lt;work_time&gt;&lt;/work_time&gt;
+        &lt;lokomotiv_sost_brigade&gt;&lt;/lokomotiv_sost_brigade&gt;
+        &lt;comment&gt;&lt;/comment&gt;
+        &lt;work_time_extension&gt;&lt;/work_time_extension&gt;
+        &lt;is_weekend&gt;&lt;/is_weekend&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;num&gt;20&lt;/num&gt;
+        &lt;date_start&gt;&lt;/date_start&gt;
+        &lt;teplovoz_num&gt;&lt;/teplovoz_num&gt;
+        &lt;call_sign&gt;&lt;/call_sign&gt;
+        &lt;brigade&gt;&lt;/brigade&gt;
+        &lt;fio_dispetcher&gt;&lt;/fio_dispetcher&gt;
+        &lt;time_start&gt;&lt;/time_start&gt;
+        &lt;date_end&gt;&lt;/date_end&gt;
+        &lt;work_time&gt;&lt;/work_time&gt;
+        &lt;lokomotiv_sost_brigade&gt;&lt;/lokomotiv_sost_brigade&gt;
+        &lt;comment&gt;&lt;/comment&gt;
+        &lt;work_time_extension&gt;&lt;/work_time_extension&gt;
+        &lt;is_weekend&gt;&lt;/is_weekend&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;num&gt;21&lt;/num&gt;
+        &lt;date_start&gt;&lt;/date_start&gt;
+        &lt;teplovoz_num&gt;&lt;/teplovoz_num&gt;
+        &lt;call_sign&gt;&lt;/call_sign&gt;
+        &lt;brigade&gt;&lt;/brigade&gt;
+        &lt;fio_dispetcher&gt;&lt;/fio_dispetcher&gt;
+        &lt;time_start&gt;&lt;/time_start&gt;
+        &lt;date_end&gt;&lt;/date_end&gt;
+        &lt;work_time&gt;&lt;/work_time&gt;
+        &lt;lokomotiv_sost_brigade&gt;&lt;/lokomotiv_sost_brigade&gt;
+        &lt;comment&gt;&lt;/comment&gt;
+        &lt;work_time_extension&gt;&lt;/work_time_extension&gt;
+        &lt;is_weekend&gt;&lt;/is_weekend&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;num&gt;22&lt;/num&gt;
+        &lt;date_start&gt;&lt;/date_start&gt;
+        &lt;teplovoz_num&gt;&lt;/teplovoz_num&gt;
+        &lt;call_sign&gt;&lt;/call_sign&gt;
+        &lt;brigade&gt;&lt;/brigade&gt;
+        &lt;fio_dispetcher&gt;&lt;/fio_dispetcher&gt;
+        &lt;time_start&gt;&lt;/time_start&gt;
+        &lt;date_end&gt;&lt;/date_end&gt;
+        &lt;work_time&gt;&lt;/work_time&gt;
+        &lt;lokomotiv_sost_brigade&gt;&lt;/lokomotiv_sost_brigade&gt;
+        &lt;comment&gt;&lt;/comment&gt;
+        &lt;work_time_extension&gt;&lt;/work_time_extension&gt;
+        &lt;is_weekend&gt;&lt;/is_weekend&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;num&gt;23&lt;/num&gt;
+        &lt;date_start&gt;&lt;/date_start&gt;
+        &lt;teplovoz_num&gt;&lt;/teplovoz_num&gt;
+        &lt;call_sign&gt;&lt;/call_sign&gt;
+        &lt;brigade&gt;&lt;/brigade&gt;
+        &lt;fio_dispetcher&gt;&lt;/fio_dispetcher&gt;
+        &lt;time_start&gt;&lt;/time_start&gt;
+        &lt;date_end&gt;&lt;/date_end&gt;
+        &lt;work_time&gt;&lt;/work_time&gt;
+        &lt;lokomotiv_sost_brigade&gt;&lt;/lokomotiv_sost_brigade&gt;
+        &lt;comment&gt;&lt;/comment&gt;
+        &lt;work_time_extension&gt;&lt;/work_time_extension&gt;
+        &lt;is_weekend&gt;&lt;/is_weekend&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;num&gt;24&lt;/num&gt;
+        &lt;date_start&gt;&lt;/date_start&gt;
+        &lt;teplovoz_num&gt;&lt;/teplovoz_num&gt;
+        &lt;call_sign&gt;&lt;/call_sign&gt;
+        &lt;brigade&gt;&lt;/brigade&gt;
+        &lt;fio_dispetcher&gt;&lt;/fio_dispetcher&gt;
+        &lt;time_start&gt;&lt;/time_start&gt;
+        &lt;date_end&gt;&lt;/date_end&gt;
+        &lt;work_time&gt;&lt;/work_time&gt;
+        &lt;lokomotiv_sost_brigade&gt;&lt;/lokomotiv_sost_brigade&gt;
+        &lt;comment&gt;&lt;/comment&gt;
+        &lt;work_time_extension&gt;&lt;/work_time_extension&gt;
+        &lt;is_weekend&gt;&lt;/is_weekend&gt;
+      &lt;/Row&gt;
+      &lt;Row&gt;
+        &lt;num&gt;25&lt;/num&gt;
+        &lt;date_start&gt;&lt;/date_start&gt;
+        &lt;teplovoz_num&gt;&lt;/teplovoz_num&gt;
+        &lt;call_sign&gt;&lt;/call_sign&gt;
+        &lt;brigade&gt;&lt;/brigade&gt;
+        &lt;fio_dispetcher&gt;&lt;/fio_dispetcher&gt;
+        &lt;time_start&gt;&lt;/time_start&gt;
+        &lt;date_end&gt;&lt;/date_end&gt;
+        &lt;work_time&gt;&lt;/work_time&gt;
+        &lt;lokomotiv_sost_brigade&gt;&lt;/lokomotiv_sost_brigade&gt;
+        &lt;comment&gt;&lt;/comment&gt;
+        &lt;work_time_extension&gt;&lt;/work_time_extension&gt;
+        &lt;is_weekend&gt;&lt;/is_weekend&gt;
+      &lt;/Row&gt;
+    &lt;/Data&gt;
+  &lt;/XmlData&gt;
+  &lt;ElementPath&gt;Data{}/Row{num(Integer),date_start(String),teplovoz_num(String),call_sign(String),brigade(Integer),fio_dispetcher(String),time_start(String),date_end(String),work_time(String),lokomotiv_sost_brigade(String),comment(String),work_time_extension(String),is_weekend(Integer)}&lt;/ElementPath&gt;
+&lt;/Query&gt;</CommandText>
+        <rd:DesignerState>
+          <DataGrid xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="">
+            <RowNumber>24</RowNumber>
+            <ColumnNumber>13</ColumnNumber>
+            <ColumnName ColumnIndex="0" ColumnWidth="100" DataType="Integer">num</ColumnName>
+            <ColumnName ColumnIndex="1" ColumnWidth="67" DataType="String">date_start</ColumnName>
+            <ColumnName ColumnIndex="2" ColumnWidth="100" DataType="String">teplovoz_num</ColumnName>
+            <ColumnName ColumnIndex="3" ColumnWidth="68" DataType="String">call_sign</ColumnName>
+            <ColumnName ColumnIndex="4" ColumnWidth="62" DataType="Integer">brigade</ColumnName>
+            <ColumnName ColumnIndex="5" ColumnWidth="100" DataType="String">fio_dispetcher</ColumnName>
+            <ColumnName ColumnIndex="6" ColumnWidth="70" DataType="String">time_start</ColumnName>
+            <ColumnName ColumnIndex="7" ColumnWidth="100" DataType="String">date_end</ColumnName>
+            <ColumnName ColumnIndex="8" ColumnWidth="100" DataType="String">work_time</ColumnName>
+            <ColumnName ColumnIndex="9" ColumnWidth="100" DataType="String">lokomotiv_sost_brigade</ColumnName>
+            <ColumnName ColumnIndex="10" ColumnWidth="100" DataType="String">comment</ColumnName>
+            <ColumnName ColumnIndex="11" ColumnWidth="100" DataType="String">work_time_extension</ColumnName>
+            <ColumnName ColumnIndex="12" ColumnWidth="100" DataType="Integer">is_weekend</ColumnName>
+            <Data ColumnIndex="0" RowIndex="0">1</Data>
+            <Data ColumnIndex="1" RowIndex="0">2018-09-01T00:00:00</Data>
+            <Data ColumnIndex="2" RowIndex="0">234</Data>
+            <Data ColumnIndex="3" RowIndex="0">34</Data>
+            <Data ColumnIndex="4" RowIndex="0">4</Data>
+            <Data ColumnIndex="5" RowIndex="0">Иванова А.Я.</Data>
+            <Data ColumnIndex="6" RowIndex="0">08:00</Data>
+            <Data ColumnIndex="7" RowIndex="0">15:20</Data>
+            <Data ColumnIndex="8" RowIndex="0">06:20</Data>
+            <Data ColumnIndex="9" RowIndex="0">Машинист тепловоза - Акулов Б.У; Составитель - Рыбкин А.Я.</Data>
+            <Data ColumnIndex="10" RowIndex="0" />
+            <Data ColumnIndex="11" RowIndex="0" />
+            <Data ColumnIndex="12" RowIndex="0">1</Data>
+            <Data ColumnIndex="0" RowIndex="1">2</Data>
+            <Data ColumnIndex="1" RowIndex="1">2018-09-02T00:00:00</Data>
+            <Data ColumnIndex="2" RowIndex="1">234</Data>
+            <Data ColumnIndex="3" RowIndex="1">34</Data>
+            <Data ColumnIndex="4" RowIndex="1">1</Data>
+            <Data ColumnIndex="5" RowIndex="1">Иванова А.Я.</Data>
+            <Data ColumnIndex="6" RowIndex="1">09:00</Data>
+            <Data ColumnIndex="7" RowIndex="1">15:20</Data>
+            <Data ColumnIndex="8" RowIndex="1">06:20</Data>
+            <Data ColumnIndex="9" RowIndex="1">Машинист тепловоза - Акулов Б.У; Составитель - Рыбкин А.Я.</Data>
+            <Data ColumnIndex="10" RowIndex="1" />
+            <Data ColumnIndex="11" RowIndex="1" />
+            <Data ColumnIndex="12" RowIndex="1">1</Data>
+            <Data ColumnIndex="0" RowIndex="2">3</Data>
+            <Data ColumnIndex="1" RowIndex="2">2018-09-03T00:00:00</Data>
+            <Data ColumnIndex="2" RowIndex="2">234</Data>
+            <Data ColumnIndex="3" RowIndex="2">34</Data>
+            <Data ColumnIndex="4" RowIndex="2">2</Data>
+            <Data ColumnIndex="5" RowIndex="2">Иванова А.Я.</Data>
+            <Data ColumnIndex="6" RowIndex="2">09:00</Data>
+            <Data ColumnIndex="7" RowIndex="2">15:20</Data>
+            <Data ColumnIndex="8" RowIndex="2">06:20</Data>
+            <Data ColumnIndex="9" RowIndex="2">Машинист тепловоза - Акулов Б.У; Составитель - Рыбкин А.Я.</Data>
+            <Data ColumnIndex="10" RowIndex="2">Ожидание вагонов</Data>
+            <Data ColumnIndex="11" RowIndex="2">до 23:00</Data>
+            <Data ColumnIndex="12" RowIndex="2">0</Data>
+            <Data ColumnIndex="0" RowIndex="3">4</Data>
+            <Data ColumnIndex="1" RowIndex="3" />
+            <Data ColumnIndex="2" RowIndex="3" />
+            <Data ColumnIndex="3" RowIndex="3" />
+            <Data ColumnIndex="4" RowIndex="3" />
+            <Data ColumnIndex="5" RowIndex="3" />
+            <Data ColumnIndex="6" RowIndex="3" />
+            <Data ColumnIndex="7" RowIndex="3" />
+            <Data ColumnIndex="8" RowIndex="3" />
+            <Data ColumnIndex="9" RowIndex="3" />
+            <Data ColumnIndex="10" RowIndex="3" />
+            <Data ColumnIndex="11" RowIndex="3" />
+            <Data ColumnIndex="12" RowIndex="3" />
+            <Data ColumnIndex="0" RowIndex="4">5</Data>
+            <Data ColumnIndex="1" RowIndex="4" />
+            <Data ColumnIndex="2" RowIndex="4" />
+            <Data ColumnIndex="3" RowIndex="4" />
+            <Data ColumnIndex="4" RowIndex="4" />
+            <Data ColumnIndex="5" RowIndex="4" />
+            <Data ColumnIndex="6" RowIndex="4" />
+            <Data ColumnIndex="7" RowIndex="4" />
+            <Data ColumnIndex="8" RowIndex="4" />
+            <Data ColumnIndex="9" RowIndex="4" />
+            <Data ColumnIndex="10" RowIndex="4" />
+            <Data ColumnIndex="11" RowIndex="4" />
+            <Data ColumnIndex="12" RowIndex="4" />
+            <Data ColumnIndex="0" RowIndex="5">6</Data>
+            <Data ColumnIndex="1" RowIndex="5" />
+            <Data ColumnIndex="2" RowIndex="5" />
+            <Data ColumnIndex="3" RowIndex="5" />
+            <Data ColumnIndex="4" RowIndex="5" />
+            <Data ColumnIndex="5" RowIndex="5" />
+            <Data ColumnIndex="6" RowIndex="5" />
+            <Data ColumnIndex="7" RowIndex="5" />
+            <Data ColumnIndex="8" RowIndex="5" />
+            <Data ColumnIndex="9" RowIndex="5" />
+            <Data ColumnIndex="10" RowIndex="5" />
+            <Data ColumnIndex="11" RowIndex="5" />
+            <Data ColumnIndex="12" RowIndex="5" />
+            <Data ColumnIndex="0" RowIndex="6">7</Data>
+            <Data ColumnIndex="1" RowIndex="6" />
+            <Data ColumnIndex="2" RowIndex="6" />
+            <Data ColumnIndex="3" RowIndex="6" />
+            <Data ColumnIndex="4" RowIndex="6" />
+            <Data ColumnIndex="5" RowIndex="6" />
+            <Data ColumnIndex="6" RowIndex="6" />
+            <Data ColumnIndex="7" RowIndex="6" />
+            <Data ColumnIndex="8" RowIndex="6" />
+            <Data ColumnIndex="9" RowIndex="6" />
+            <Data ColumnIndex="10" RowIndex="6" />
+            <Data ColumnIndex="11" RowIndex="6" />
+            <Data ColumnIndex="12" RowIndex="6" />
+            <Data ColumnIndex="0" RowIndex="7">8</Data>
+            <Data ColumnIndex="1" RowIndex="7" />
+            <Data ColumnIndex="2" RowIndex="7" />
+            <Data ColumnIndex="3" RowIndex="7" />
+            <Data ColumnIndex="4" RowIndex="7" />
+            <Data ColumnIndex="5" RowIndex="7" />
+            <Data ColumnIndex="6" RowIndex="7" />
+            <Data ColumnIndex="7" RowIndex="7" />
+            <Data ColumnIndex="8" RowIndex="7" />
+            <Data ColumnIndex="9" RowIndex="7" />
+            <Data ColumnIndex="10" RowIndex="7" />
+            <Data ColumnIndex="11" RowIndex="7" />
+            <Data ColumnIndex="12" RowIndex="7" />
+            <Data ColumnIndex="0" RowIndex="8">9</Data>
+            <Data ColumnIndex="1" RowIndex="8" />
+            <Data ColumnIndex="2" RowIndex="8" />
+            <Data ColumnIndex="3" RowIndex="8" />
+            <Data ColumnIndex="4" RowIndex="8" />
+            <Data ColumnIndex="5" RowIndex="8" />
+            <Data ColumnIndex="6" RowIndex="8" />
+            <Data ColumnIndex="7" RowIndex="8" />
+            <Data ColumnIndex="8" RowIndex="8" />
+            <Data ColumnIndex="9" RowIndex="8" />
+            <Data ColumnIndex="10" RowIndex="8" />
+            <Data ColumnIndex="11" RowIndex="8" />
+            <Data ColumnIndex="12" RowIndex="8" />
+            <Data ColumnIndex="0" RowIndex="9">10</Data>
+            <Data ColumnIndex="1" RowIndex="9" />
+            <Data ColumnIndex="2" RowIndex="9" />
+            <Data ColumnIndex="3" RowIndex="9" />
+            <Data ColumnIndex="4" RowIndex="9" />
+            <Data ColumnIndex="5" RowIndex="9" />
+            <Data ColumnIndex="6" RowIndex="9" />
+            <Data ColumnIndex="7" RowIndex="9" />
+            <Data ColumnIndex="8" RowIndex="9" />
+            <Data ColumnIndex="9" RowIndex="9" />
+            <Data ColumnIndex="10" RowIndex="9" />
+            <Data ColumnIndex="11" RowIndex="9" />
+            <Data ColumnIndex="12" RowIndex="9" />
+            <Data ColumnIndex="0" RowIndex="10">11</Data>
+            <Data ColumnIndex="1" RowIndex="10" />
+            <Data ColumnIndex="2" RowIndex="10" />
+            <Data ColumnIndex="3" RowIndex="10" />
+            <Data ColumnIndex="4" RowIndex="10" />
+            <Data ColumnIndex="5" RowIndex="10" />
+            <Data ColumnIndex="6" RowIndex="10" />
+            <Data ColumnIndex="7" RowIndex="10" />
+            <Data ColumnIndex="8" RowIndex="10" />
+            <Data ColumnIndex="9" RowIndex="10" />
+            <Data ColumnIndex="10" RowIndex="10" />
+            <Data ColumnIndex="11" RowIndex="10" />
+            <Data ColumnIndex="12" RowIndex="10" />
+            <Data ColumnIndex="0" RowIndex="11">12</Data>
+            <Data ColumnIndex="1" RowIndex="11" />
+            <Data ColumnIndex="2" RowIndex="11" />
+            <Data ColumnIndex="3" RowIndex="11" />
+            <Data ColumnIndex="4" RowIndex="11" />
+            <Data ColumnIndex="5" RowIndex="11" />
+            <Data ColumnIndex="6" RowIndex="11" />
+            <Data ColumnIndex="7" RowIndex="11" />
+            <Data ColumnIndex="8" RowIndex="11" />
+            <Data ColumnIndex="9" RowIndex="11" />
+            <Data ColumnIndex="10" RowIndex="11" />
+            <Data ColumnIndex="11" RowIndex="11" />
+            <Data ColumnIndex="12" RowIndex="11" />
+            <Data ColumnIndex="0" RowIndex="12">14</Data>
+            <Data ColumnIndex="1" RowIndex="12" />
+            <Data ColumnIndex="2" RowIndex="12" />
+            <Data ColumnIndex="3" RowIndex="12" />
+            <Data ColumnIndex="4" RowIndex="12" />
+            <Data ColumnIndex="5" RowIndex="12" />
+            <Data ColumnIndex="6" RowIndex="12" />
+            <Data ColumnIndex="7" RowIndex="12" />
+            <Data ColumnIndex="8" RowIndex="12" />
+            <Data ColumnIndex="9" RowIndex="12" />
+            <Data ColumnIndex="10" RowIndex="12" />
+            <Data ColumnIndex="11" RowIndex="12" />
+            <Data ColumnIndex="12" RowIndex="12" />
+            <Data ColumnIndex="0" RowIndex="13">15</Data>
+            <Data ColumnIndex="1" RowIndex="13" />
+            <Data ColumnIndex="2" RowIndex="13" />
+            <Data ColumnIndex="3" RowIndex="13" />
+            <Data ColumnIndex="4" RowIndex="13" />
+            <Data ColumnIndex="5" RowIndex="13" />
+            <Data ColumnIndex="6" RowIndex="13" />
+            <Data ColumnIndex="7" RowIndex="13" />
+            <Data ColumnIndex="8" RowIndex="13" />
+            <Data ColumnIndex="9" RowIndex="13" />
+            <Data ColumnIndex="10" RowIndex="13" />
+            <Data ColumnIndex="11" RowIndex="13" />
+            <Data ColumnIndex="12" RowIndex="13" />
+            <Data ColumnIndex="0" RowIndex="14">16</Data>
+            <Data ColumnIndex="1" RowIndex="14" />
+            <Data ColumnIndex="2" RowIndex="14" />
+            <Data ColumnIndex="3" RowIndex="14" />
+            <Data ColumnIndex="4" RowIndex="14" />
+            <Data ColumnIndex="5" RowIndex="14" />
+            <Data ColumnIndex="6" RowIndex="14" />
+            <Data ColumnIndex="7" RowIndex="14" />
+            <Data ColumnIndex="8" RowIndex="14" />
+            <Data ColumnIndex="9" RowIndex="14" />
+            <Data ColumnIndex="10" RowIndex="14" />
+            <Data ColumnIndex="11" RowIndex="14" />
+            <Data ColumnIndex="12" RowIndex="14" />
+            <Data ColumnIndex="0" RowIndex="15">17</Data>
+            <Data ColumnIndex="1" RowIndex="15" />
+            <Data ColumnIndex="2" RowIndex="15" />
+            <Data ColumnIndex="3" RowIndex="15" />
+            <Data ColumnIndex="4" RowIndex="15" />
+            <Data ColumnIndex="5" RowIndex="15" />
+            <Data ColumnIndex="6" RowIndex="15" />
+            <Data ColumnIndex="7" RowIndex="15" />
+            <Data ColumnIndex="8" RowIndex="15" />
+            <Data ColumnIndex="9" RowIndex="15" />
+            <Data ColumnIndex="10" RowIndex="15" />
+            <Data ColumnIndex="11" RowIndex="15" />
+            <Data ColumnIndex="12" RowIndex="15" />
+            <Data ColumnIndex="0" RowIndex="16">18</Data>
+            <Data ColumnIndex="1" RowIndex="16" />
+            <Data ColumnIndex="2" RowIndex="16" />
+            <Data ColumnIndex="3" RowIndex="16" />
+            <Data ColumnIndex="4" RowIndex="16" />
+            <Data ColumnIndex="5" RowIndex="16" />
+            <Data ColumnIndex="6" RowIndex="16" />
+            <Data ColumnIndex="7" RowIndex="16" />
+            <Data ColumnIndex="8" RowIndex="16" />
+            <Data ColumnIndex="9" RowIndex="16" />
+            <Data ColumnIndex="10" RowIndex="16" />
+            <Data ColumnIndex="11" RowIndex="16" />
+            <Data ColumnIndex="12" RowIndex="16" />
+            <Data ColumnIndex="0" RowIndex="17">19</Data>
+            <Data ColumnIndex="1" RowIndex="17" />
+            <Data ColumnIndex="2" RowIndex="17" />
+            <Data ColumnIndex="3" RowIndex="17" />
+            <Data ColumnIndex="4" RowIndex="17" />
+            <Data ColumnIndex="5" RowIndex="17" />
+            <Data ColumnIndex="6" RowIndex="17" />
+            <Data ColumnIndex="7" RowIndex="17" />
+            <Data ColumnIndex="8" RowIndex="17" />
+            <Data ColumnIndex="9" RowIndex="17" />
+            <Data ColumnIndex="10" RowIndex="17" />
+            <Data ColumnIndex="11" RowIndex="17" />
+            <Data ColumnIndex="12" RowIndex="17" />
+            <Data ColumnIndex="0" RowIndex="18">20</Data>
+            <Data ColumnIndex="1" RowIndex="18" />
+            <Data ColumnIndex="2" RowIndex="18" />
+            <Data ColumnIndex="3" RowIndex="18" />
+            <Data ColumnIndex="4" RowIndex="18" />
+            <Data ColumnIndex="5" RowIndex="18" />
+            <Data ColumnIndex="6" RowIndex="18" />
+            <Data ColumnIndex="7" RowIndex="18" />
+            <Data ColumnIndex="8" RowIndex="18" />
+            <Data ColumnIndex="9" RowIndex="18" />
+            <Data ColumnIndex="10" RowIndex="18" />
+            <Data ColumnIndex="11" RowIndex="18" />
+            <Data ColumnIndex="12" RowIndex="18" />
+            <Data ColumnIndex="0" RowIndex="19">21</Data>
+            <Data ColumnIndex="1" RowIndex="19" />
+            <Data ColumnIndex="2" RowIndex="19" />
+            <Data ColumnIndex="3" RowIndex="19" />
+            <Data ColumnIndex="4" RowIndex="19" />
+            <Data ColumnIndex="5" RowIndex="19" />
+            <Data ColumnIndex="6" RowIndex="19" />
+            <Data ColumnIndex="7" RowIndex="19" />
+            <Data ColumnIndex="8" RowIndex="19" />
+            <Data ColumnIndex="9" RowIndex="19" />
+            <Data ColumnIndex="10" RowIndex="19" />
+            <Data ColumnIndex="11" RowIndex="19" />
+            <Data ColumnIndex="12" RowIndex="19" />
+            <Data ColumnIndex="0" RowIndex="20">22</Data>
+            <Data ColumnIndex="1" RowIndex="20" />
+            <Data ColumnIndex="2" RowIndex="20" />
+            <Data ColumnIndex="3" RowIndex="20" />
+            <Data ColumnIndex="4" RowIndex="20" />
+            <Data ColumnIndex="5" RowIndex="20" />
+            <Data ColumnIndex="6" RowIndex="20" />
+            <Data ColumnIndex="7" RowIndex="20" />
+            <Data ColumnIndex="8" RowIndex="20" />
+            <Data ColumnIndex="9" RowIndex="20" />
+            <Data ColumnIndex="10" RowIndex="20" />
+            <Data ColumnIndex="11" RowIndex="20" />
+            <Data ColumnIndex="12" RowIndex="20" />
+            <Data ColumnIndex="0" RowIndex="21">23</Data>
+            <Data ColumnIndex="1" RowIndex="21" />
+            <Data ColumnIndex="2" RowIndex="21" />
+            <Data ColumnIndex="3" RowIndex="21" />
+            <Data ColumnIndex="4" RowIndex="21" />
+            <Data ColumnIndex="5" RowIndex="21" />
+            <Data ColumnIndex="6" RowIndex="21" />
+            <Data ColumnIndex="7" RowIndex="21" />
+            <Data ColumnIndex="8" RowIndex="21" />
+            <Data ColumnIndex="9" RowIndex="21" />
+            <Data ColumnIndex="10" RowIndex="21" />
+            <Data ColumnIndex="11" RowIndex="21" />
+            <Data ColumnIndex="12" RowIndex="21" />
+            <Data ColumnIndex="0" RowIndex="22">24</Data>
+            <Data ColumnIndex="1" RowIndex="22" />
+            <Data ColumnIndex="2" RowIndex="22" />
+            <Data ColumnIndex="3" RowIndex="22" />
+            <Data ColumnIndex="4" RowIndex="22" />
+            <Data ColumnIndex="5" RowIndex="22" />
+            <Data ColumnIndex="6" RowIndex="22" />
+            <Data ColumnIndex="7" RowIndex="22" />
+            <Data ColumnIndex="8" RowIndex="22" />
+            <Data ColumnIndex="9" RowIndex="22" />
+            <Data ColumnIndex="10" RowIndex="22" />
+            <Data ColumnIndex="11" RowIndex="22" />
+            <Data ColumnIndex="12" RowIndex="22" />
+            <Data ColumnIndex="0" RowIndex="23">25</Data>
+            <Data ColumnIndex="1" RowIndex="23" />
+            <Data ColumnIndex="2" RowIndex="23" />
+            <Data ColumnIndex="3" RowIndex="23" />
+            <Data ColumnIndex="4" RowIndex="23" />
+            <Data ColumnIndex="5" RowIndex="23" />
+            <Data ColumnIndex="6" RowIndex="23" />
+            <Data ColumnIndex="7" RowIndex="23" />
+            <Data ColumnIndex="8" RowIndex="23" />
+            <Data ColumnIndex="9" RowIndex="23" />
+            <Data ColumnIndex="10" RowIndex="23" />
+            <Data ColumnIndex="11" RowIndex="23" />
+            <Data ColumnIndex="12" RowIndex="23" />
+          </DataGrid>
+        </rd:DesignerState>
+      </Query>
+      <Fields>
+        <Field Name="num">
+          <DataField>num</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="date_start">
+          <DataField>date_start</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="teplovoz_num">
+          <DataField>teplovoz_num</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="call_sign">
+          <DataField>call_sign</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="brigade">
+          <DataField>brigade</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="fio_dispetcher">
+          <DataField>fio_dispetcher</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="time_start">
+          <DataField>time_start</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="date_end">
+          <DataField>date_end</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="work_time">
+          <DataField>work_time</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="lokomotiv_sost_brigade">
+          <DataField>lokomotiv_sost_brigade</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="comment">
+          <DataField>comment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="work_time_extension">
+          <DataField>work_time_extension</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="is_weekend">
+          <DataField>is_weekend</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Textbox Name="Textbox1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Сводка по времени работы локомотива с </Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=First(Fields!dtstart.Value, "main_info")</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value> по </Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=First(Fields!dtend .Value, "main_info")</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>0mm</Top>
+            <Left>0mm</Left>
+            <Height>6.61458mm</Height>
+            <Width>273.51528mm</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Tablix Name="Tablix2">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>10.75972mm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>25mm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>19.75556mm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>14mm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>25mm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>28mm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>28mm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>25mm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>45mm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>35mm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>18mm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>18.52084mm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox8">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>№ п/п</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox8</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox10">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Дата маневровых работ</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox10</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox12">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>№ тепловоза (позывной)</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox12</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox14">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>№ бригады</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox14</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox16">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Диспетчер (ФИО)</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox16</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox18">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Начало работы (Время выезда на/со ст."Заводская-сортировочная")</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox18</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox20">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Окончание работы (Убытие с ж/д путей ООО "ЗСЭМЗ")</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox20</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox22">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Фактическое отработанное время на ООО "ЗСЭМЗ"</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox22</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox28">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Локомотивно-составительская бригада (должность, ФИО)</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox28</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox30">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Примечание</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox30</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox32">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Продление работы тепловоза, после 20:00</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox32</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>5.82083mm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="num">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!num.Value</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>num</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="date_start">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!date_start.Value &amp; IIF(Fields!is_weekend.Value = "1", "(выходной день)", "")</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>date_start</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="teplovoz_num">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!teplovoz_num.Value &amp; IIf((Len(Fields!call_sign.Value)&gt;0)," (" &amp; Fields!call_sign.Value &amp; ")","")</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>teplovoz_num</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="brigade">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!brigade.Value</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>brigade</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="fio_dispetcher">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!fio_dispetcher.Value</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>fio_dispetcher</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="time_start">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!time_start.Value</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>time_start</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="date_end">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!date_end.Value</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>date_end</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="work_time">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!work_time.Value</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>work_time</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="lokomotiv_sost_brigade">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!lokomotiv_sost_brigade.Value</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <TextDecoration>Underline</TextDecoration>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>lokomotiv_sost_brigade</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="comment1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!comment.Value</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>comment1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="work_time_extension">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!work_time_extension.Value</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>work_time_extension</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                  <RepeatOnNewPage>true</RepeatOnNewPage>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="Подробности" />
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>lokomotiv_list</DataSetName>
+            <Top>7.55297mm</Top>
+            <Left>0mm</Left>
+            <Height>24.34167mm</Height>
+            <Width>273.51528mm</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <TopBorder>
+                <Color>Black</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </TopBorder>
+              <BottomBorder>
+                <Color>Black</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </BottomBorder>
+              <LeftBorder>
+                <Color>Black</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </LeftBorder>
+              <RightBorder>
+                <Color>Black</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </RightBorder>
+            </Style>
+          </Tablix>
+        </ReportItems>
+        <Height>32.60001mm</Height>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Body>
+      <Width>273.51528mm</Width>
+      <Page>
+        <PageFooter>
+          <Height>6mm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox2">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Globals!PageNumber</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Top>0mm</Top>
+              <Left>247.35366mm</Left>
+              <Height>6mm</Height>
+              <Width>25mm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <PageHeight>21cm</PageHeight>
+        <PageWidth>29.7cm</PageWidth>
+        <InteractiveHeight>19cm</InteractiveHeight>
+        <InteractiveWidth>27.7cm</InteractiveWidth>
+        <LeftMargin>1cm</LeftMargin>
+        <RightMargin>1cm</RightMargin>
+        <TopMargin>1cm</TopMargin>
+        <BottomMargin>1cm</BottomMargin>
+        <ColumnSpacing>0.13cm</ColumnSpacing>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>52df2820-14d7-4c35-ae57-965cd3e94c3f</rd:ReportID>
+</Report>
